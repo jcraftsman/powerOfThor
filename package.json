@@ -1,0 +1,15 @@
+{
+  "name": "power_of_thor",
+  "version": "1.0.0",
+  "description": "Power of thor ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "jasmine-node": "^1.14.5"
+  }
+}
