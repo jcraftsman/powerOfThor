@@ -7,6 +7,7 @@ const WEST = 'W';
 const SOUTH_WEST = 'SW';
 const SOUTH_EAST = 'SE';
 const NORTH_EAST = 'NE';
+const NORTH_WEST = 'NW';
 
 
 describe('thor', function () {
@@ -86,6 +87,16 @@ describe('thor', function () {
                 position_light);
 
             expect(direction_north_east).toBe(NORTH_EAST);
+        });
+        it('thor go north_west when the light is to the north_west', function () {
+            var position_thor = {x: 1, y: 1};
+            var position_light = {x: 0, y: 0};
+
+            var direction_north_east = thor.nextDirection(
+                position_thor,
+                position_light);
+
+            expect(direction_north_east).toBe(NORTH_WEST);
         });
 
     });
@@ -174,7 +185,7 @@ describe('thor', function () {
                 expect(next_position_thor).toEqual(position_thor_moved_south_east);
             });
         });
-        describe('moving south south west', function () {
+        describe('moving south west', function () {
             it('should move thor x from 1 to 0 and y form 0 to 1', function () {
                 var position_thor = {x: 1, y: 0};
                 var position_thor_moved_south_west = {x: 0, y: 1};
@@ -186,7 +197,7 @@ describe('thor', function () {
                 expect(next_position_thor).toEqual(position_thor_moved_south_west);
             });
         });
-        describe('moving south north east', function () {
+        describe('moving north east', function () {
             it('should move thor x from 1 to 2 and y from 1 to 0', function () {
                 var position_thor = {x: 1, y: 1};
                 var position_thor_moved_north_east = {x: 2, y: 0};
@@ -196,6 +207,18 @@ describe('thor', function () {
                     NORTH_EAST);
 
                 expect(next_position_thor).toEqual(position_thor_moved_north_east);
+            });
+        });
+        describe('moving north west', function () {
+            it('should move thor x from 1 to 0 and y from 1 to 0', function () {
+                var position_thor = {x: 1, y: 1};
+                var position_thor_moved_north_west = {x: 0, y: 0};
+
+                var next_position_thor = thor.nextPosition(
+                    position_thor,
+                    NORTH_WEST);
+
+                expect(next_position_thor).toEqual(position_thor_moved_north_west);
             });
         });
     });

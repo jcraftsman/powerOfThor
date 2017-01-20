@@ -5,6 +5,7 @@ const WEST = 'W';
 const SOUTH_WEST = 'SW';
 const SOUTH_EAST = 'SE';
 const NORTH_EAST = 'NE';
+const NORTH_WEST = 'NW';
 
 
 function nextDirection(position_thor,
@@ -22,6 +23,8 @@ function nextDirection(position_thor,
         direction = SOUTH_EAST;
     } else if (is_light_to_north && is_light_to_east) {
         direction = NORTH_EAST;
+    } else if (is_light_to_north && is_light_to_west) {
+        direction = NORTH_WEST;
     } else if (is_light_to_east) {
         direction = EAST;
     } else if (is_light_to_west) {
@@ -41,7 +44,8 @@ function nextPosition(position_thor, direction) {
         'E': {x: 1, y: 0},
         'SE': {x: 1, y: 1},
         'SW': {x: -1, y: 1},
-        'NE': {x: 1, y: -1}
+        'NE': {x: 1, y: -1},
+        'NW': {x: -1, y: -1},
     };
 
     var next_position_thor = {
